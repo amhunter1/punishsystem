@@ -1,0 +1,121 @@
+# DiscordPunishBot Configuration
+# Discord Punishment Bot for Minecraft Server
+# Version: 1.0.0
+
+# Discord Bot Settings
+discord:
+  # Bot token from Discord Developer Portal
+  token: "YOUR_BOT_TOKEN_HERE"
+
+  # Your Discord server (guild) ID
+  guild-id: "YOUR_GUILD_ID_HERE"
+
+  # Log channel ID for punishment notifications
+  log-channel-id: "LOG_CHANNEL_ID_HERE"
+
+  # Role IDs that can use punishment commands
+  roles:
+    mute: "MUTE_ROLE_ID"      # Role that can use /mute command
+    ban: "BAN_ROLE_ID"        # Role that can use /ban command
+    other: "OTHER_ROLE_ID"    # Role that can use /diger command
+
+  # Embed settings for Discord notifications
+  embeds:
+    punishment:
+      title: "🔨 Yeni Ceza"
+      footer: "Sunucu Ceza Sistemi"
+      # Colors are automatically set based on punishment type:
+      # Mute: Orange (0xF39C12), Ban: Red (0xE74C3C), Other: Blue (0x3498DB)
+
+# Database Configuration
+database:
+  # Database type: sqlite or mysql
+  type: "sqlite"
+
+  # MySQL settings (only if type is mysql)
+  host: "localhost"
+  port: 3306
+  database: "punishments"
+  username: "root"
+  password: "password"
+
+# Punishment System Configuration
+punishments:
+  # Mute punishments
+  mute:
+    agir-kufur:
+      command: "essentials:mute %player% 7h %reason%"
+      display: "Ağır Küfür"
+    spam:
+      command: "essentials:mute %player% 3h %reason%"
+      display: "Spam"
+    reklam:
+      command: "essentials:mute %player% 12h %reason%"
+      display: "Reklam"
+    kufur:
+      command: "essentials:mute %player% 2h %reason%"
+      display: "Küfür"
+
+  # Ban punishments
+  ban:
+    hile:
+      command: "essentials:ban %player% %reason%"
+      display: "Hile/Cheat"
+    griefing:
+      command: "essentials:tempban %player% 7d %reason%"
+      display: "Griefing"
+    troll:
+      command: "essentials:tempban %player% 3d %reason%"
+      display: "Troll"
+    duping:
+      command: "essentials:ban %player% %reason%"
+      display: "Duping"
+
+  # Other punishments
+  other:
+    warn:
+      command: "essentials:warn %player% %reason%"
+      display: "Uyarı"
+
+# Plugin Messages
+messages:
+  no-permission: "&cBu komutu kullanma yetkiniz yok!"
+  player-not-found: "&cOyuncu bulunamadı!"
+  punishment-executed: "&aCeza başarıyla uygulandı!"
+  no-punishments: "&eOyuncunun hiç cezası bulunmuyor."
+  punishment-history: "&6=== %player% Ceza Geçmişi ==="
+  punishment-entry: "&7%date% &8- &c%type% &8- &f%reason% &8- &e%admin%"
+  config-reloaded: "&aKonfigürasyon başarıyla yeniden yüklendi!"
+
+# Advanced Settings
+settings:
+  # Enable debug logging
+  debug: false
+
+  # Maximum punishments to show in /ceza command
+  max-punishment-display: 10
+
+  # Auto-save interval (in minutes)
+  auto-save-interval: 30
+
+  # Date format for punishment display
+  date-format: "dd.MM.yyyy HH:mm"
+
+# Command placeholders:
+# %player% - Punished player name
+# %reason% - Punishment reason
+# %admin% - Admin who issued the punishment
+# %date% - Date and time of punishment
+
+
+##############################################################################
+#                                                                            #
+#  This plugin was developed by [Melüt].                                     #
+#                                                                            #
+#  For support, contributions, or to connect:                                #
+#  Discord Community: [https://discord.com/users/871721944268038175]         #
+#  GitHub Repository: [https://github.com/amhunter1]                         #
+#                                                                            #
+#  Thank you for using this plugin!                                          #
+#                                                                            #
+##############################################################################
