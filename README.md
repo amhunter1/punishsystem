@@ -13,11 +13,22 @@ Discord üzerinden Minecraft sunucunuzda ceza sistemi yönetebileceğiniz profes
 
 ## 📸 Önizleme
 
+**Oyun içi /ceza <oyuncu> örneği**
 ![Oyun içi /ceza <oyuncu> örneği](assets/screenshots/demo1.png)
+
+**Admin paneli 1**
 ![Kullanıcı Paneli](assets/screenshots/demo2.png)
+
+**Admin paneli 2**
 ![Kullanıcı Paneli2](assets/screenshots/demo3.png)
+
+**Admin paneli 3**
 ![Kullanıcı Paneli3](assets/screenshots/demo4.png)
+
+**Discord log mesajı örneği**
 ![Discord log mesajı örneği](assets/screenshots/demo5.png)
+
+**Sunucu konsol mesaj örneği**
 ![Sunucu konsol mesaj örneği](assets/screenshots/demo6.png)
 
 
