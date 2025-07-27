@@ -11,6 +11,17 @@ Discord üzerinden Minecraft sunucunuzda ceza sistemi yönetebileceğiniz profes
 - **Özelleştirilebilir**: Tüm ceza türleri ve süreleri config'ten ayarlanabilir
 - **İstatistikler**: Sunucu ceza istatistikleri
 
+## 📸 Önizleme
+
+![Oyun içi /ceza <oyuncu> örneği](assets/screenshots/demo1.png)
+![Kullanıcı Paneli](assets/screenshots/demo2.png)
+![Kullanıcı Paneli2](assets/screenshots/demo3.png)
+![Kullanıcı Paneli3](assets/screenshots/demo4.png)
+![Discord log mesajı örneği](assets/screenshots/demo5.png)
+![Sunucu konsol mesaj örneği](assets/screenshots/demo6.png)
+
+
+
 ## 🚀 Kurulum
 
 ### 1. Gereksinimler
