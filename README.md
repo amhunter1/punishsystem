@@ -5,6 +5,8 @@
 
 **A professional punishment system plugin for managing Minecraft server punishments via Discord integration.**
 
+[**Download link**](https://modrinth.com/plugin/punishsystem)
+
 ## ✨ Features
 
 * **Discord Integration**: Issue punishments using Discord slash commands
