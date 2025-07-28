@@ -5,7 +5,7 @@
 
 **A professional punishment system plugin for managing Minecraft server punishments via Discord integration.**
 
-[**Download link**](https://modrinth.com/plugin/punishsystem)
+[**Download link & indirme linki**](https://modrinth.com/plugin/punishsystem)
 
 ## ✨ Features
 
@@ -218,6 +218,8 @@ If you need help:
 # DiscordPunishBot
 
 Discord üzerinden Minecraft sunucunuzda ceza sistemi yönetebileceğiniz profesyonel bir plugin.
+
+[**Download link & indirme linki**](https://modrinth.com/plugin/punishsystem)
 
 ## ✨ Özellikler
 
