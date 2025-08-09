@@ -1,0 +1,68 @@
+name: DiscordPunishBot
+version: v1.1.0
+main: com.melut.punishsystem.DiscordPunishBot
+api-version: '1.20'
+prefix: DiscordPunish
+author: melut
+description: Discord punishment bot for Minecraft server made by melüt dc--> gfwilliam
+website: https://github.com/amhunter1/punishsystem
+
+softdepend: [PlaceholderAPI, Essentials]
+
+commands:
+  ceza:
+    description: Shows player's punishment history
+    usage: /ceza <oyuncu>
+    permission: discordpunish.ceza
+  dpunish:
+    description: Main punishment command
+    usage: /dpunish <reload|help|info|test|stats>
+    permission: discordpunish.admin
+
+permissions:
+  discordpunish.*:
+    description: Gives access to all DiscordPunishBot permissions
+    children:
+      discordpunish.admin: true
+      discordpunish.ceza: true
+      discordpunish.mute: true
+      discordpunish.ban: true
+      discordpunish.kick: true
+      discordpunish.tempban: true
+      discordpunish.jail: true
+      discordpunish.warn: true
+  discordpunish.admin:
+    description: Admin permissions
+    default: op
+  discordpunish.ceza:
+    description: Permission to check punishment history
+    default: true
+  discordpunish.mute:
+    description: Permission to mute players
+    default: op
+  discordpunish.ban:
+    description: Permission to ban players
+    default: op
+  discordpunish.kick:
+    description: Permission to kick players
+    default: op
+  discordpunish.tempban:
+    description: Permission to tempban players
+    default: op
+  discordpunish.jail:
+    description: Permission to jail players
+    default: op
+  discordpunish.warn:
+    description: Permission to warn players
+    default: op
+##############################################################################
+#                                                                            #
+#  This plugin was developed by [Melüt].                                     #
+#                                                                            #
+#  For support, contributions, or to connect:                                #
+#  Discord Community: [https://discord.com/users/871721944268038175]         #
+#  GitHub Repository: [https://github.com/amhunter1]                         #
+#                                                                            #
+#  Thank you for using this plugin!                                          #
+#                                                                            #
+##############################################################################
