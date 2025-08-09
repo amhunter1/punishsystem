@@ -1,7 +1,4 @@
-# DiscordPunishBot
-
-!!!**For now, the Discord bot only supports the Turkish language. English will be added in future updates.**
-
+# DiscordPunishBot v1.1.0
 
 **A professional punishment system plugin for managing Minecraft server punishments via Discord integration.**
 
