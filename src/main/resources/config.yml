@@ -1,7 +1,8 @@
 # DiscordPunishBot Configuration
 # Discord Punishment Bot for Minecraft Server
 # Version: 1.1.0
-
+# ÖNEMLİ!!! CONFİGTE EDİTLEDİĞİN YERLERE " KOYMAYI UNUTMAYIN YOKSA ÇALIŞMAZ.
+# IMPORTANT!!! DO NOT FORGET TO PUT "WHERE YOU EDIT THE CONFIG, OR IT WILL NOT WORK.
 # Discord Bot Settings
 discord:
   # Bot token from Discord Developer Portal
@@ -542,4 +543,5 @@ messages:
 #                                                                            #
 #  Thank you for using this plugin!                                          #
 #                                                                            #
+
 ##############################################################################
