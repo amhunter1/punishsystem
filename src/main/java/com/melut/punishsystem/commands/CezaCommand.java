@@ -72,7 +72,6 @@ public class CezaCommand implements CommandExecutor, TabCompleter {
                             ? plugin.getConfigManager().getColoredString("messages.status.active")
                             : plugin.getConfigManager().getColoredString("messages.status.inactive");
 
-                    // Ortak placeholder değişimleri (entry şablonunda %reason%/%admin% yer alıyorsa da destekler)
                     String entryMessage = entryTemplate
                             .replace("%index%", String.valueOf(i + 1))
                             .replace("%date%", punishment.getFormattedDate())
@@ -81,10 +80,8 @@ public class CezaCommand implements CommandExecutor, TabCompleter {
                             .replace("%admin%", punishment.getAdminName())
                             .replace("%status%", statusText);
 
-                    // Eski/yanlış placeholderları temizle (örn. /reason/, /admin/ veya kalmış %xyz%)
                     sender.sendMessage(sanitizePlaceholderArtifacts(entryMessage));
 
-                    // Eğer entry satırı zaten bu placeholder'ları içeriyorsa tekrar etmeyelim
                     if (!entryTemplate.contains("%reason%")) {
                         sender.sendMessage(reasonLine.replace("%reason%", punishment.getReason()));
                     }
@@ -194,9 +191,7 @@ public class CezaCommand implements CommandExecutor, TabCompleter {
 
     private String sanitizePlaceholderArtifacts(String message) {
         if (message == null) return "";
-        // /reason/ ve /admin/ gibi artıkları kaldır
         String sanitized = message.replace("/reason/", "").replace("/admin/", "");
-        // Kalan %...% placeholderlarını sil
         return sanitized.replaceAll("%[a-zA-Z0-9_]+%", "");
     }
 
@@ -219,4 +214,5 @@ public class CezaCommand implements CommandExecutor, TabCompleter {
 
         return new ArrayList<>();
     }
+
 }
