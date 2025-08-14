@@ -88,7 +88,6 @@ public class DatabaseManager {
             stmt.executeUpdate();
         }
 
-        // Yeni ceza türleri için genişletilmiş istatistik tablosu
         String createStatsTable = """
             CREATE TABLE IF NOT EXISTS punishment_stats (
                 id INTEGER PRIMARY KEY %s,
@@ -110,15 +109,12 @@ public class DatabaseManager {
             stmt.executeUpdate();
         }
 
-        // Yeni sütunları eklemek için ALTER TABLE komutları
         addNewColumnsIfNotExist();
     }
 
     private void addNewColumnsIfNotExist() throws SQLException {
-        // SQLite için sütun kontrolü
         if (databaseType.equalsIgnoreCase("sqlite")) {
             try {
-                // Yeni sütunları ekle (eğer yoksa)
                 String[] newColumns = {
                     "ALTER TABLE punishment_stats ADD COLUMN total_kicks INTEGER DEFAULT 0",
                     "ALTER TABLE punishment_stats ADD COLUMN total_tempbans INTEGER DEFAULT 0", 
@@ -130,11 +126,9 @@ public class DatabaseManager {
                     try (PreparedStatement stmt = connection.prepareStatement(columnQuery)) {
                         stmt.executeUpdate();
                     } catch (SQLException ignored) {
-                        // Sütun zaten varsa hata vermez
                     }
                 }
             } catch (Exception ignored) {
-                // Tablo yoksa veya başka bir hata varsa görmezden gel
             }
         }
     }
@@ -160,7 +154,6 @@ public class DatabaseManager {
                 if (keys != null && keys.next()) {
                     punishment.setId(keys.getInt(1));
                 } else {
-                    // Fallback (özellikle bazı SQLite sürümleri için)
                     try (PreparedStatement lastIdStmt = connection.prepareStatement(databaseType.equalsIgnoreCase("sqlite") ?
                             "SELECT last_insert_rowid()" : "SELECT LAST_INSERT_ID()")) {
                         try (ResultSet rs = lastIdStmt.executeQuery()) {
@@ -336,4 +329,5 @@ public class DatabaseManager {
     public Connection getConnection() {
         return connection;
     }
+
 }
