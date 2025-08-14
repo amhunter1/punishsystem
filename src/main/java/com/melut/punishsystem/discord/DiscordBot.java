@@ -368,7 +368,6 @@ public class DiscordBot extends ListenerAdapter {
                     .setFooter(plugin.getConfigManager().getString("discord.embeds.punishment.footer"))
                     .setTimestamp(java.time.Instant.now());
 
-        // Thumbnail ayarlama
         embed.setThumbnail(getPunishmentThumbnail(punishment.getType()));
 
         logChannel.sendMessageEmbeds(embed.build()).queue(
@@ -525,4 +524,5 @@ public class DiscordBot extends ListenerAdapter {
             }
         }
     }
+
 }
