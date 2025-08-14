@@ -32,12 +32,10 @@ public class PunishmentManager {
             return;
         }
 
-        // Cooldown kontrolü
         if (!checkCooldown(adminName, type)) {
             return;
         }
 
-        // Daily limit kontrolü
         if (!checkDailyLimit(adminName, type)) {
             return;
         }
@@ -74,7 +72,6 @@ public class PunishmentManager {
 
                 plugin.getDiscordBot().sendPunishmentNotification(punishment);
 
-                // Cooldown ve daily limit güncelleme
                 updateCooldown(adminName, type);
                 updateDailyLimit(adminName, type);
 
@@ -261,4 +258,5 @@ public class PunishmentManager {
     public Map<String, Integer> getDailyLimits() {
         return new HashMap<>(dailyLimits);
     }
+
 }
