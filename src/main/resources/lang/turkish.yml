@@ -1,0 +1,423 @@
+# Turkish Language File for DiscordPunishBot
+# Türkçe Dil Dosyası
+language: "tr"
+name: "Turkish"
+
+# Plugin Messages
+messages:
+  # Permission and error messages
+  no-permission: "&cBu komutu kullanma yetkiniz yok!"
+  player-not-found: "&cOyuncu bulunamadı!"
+  punishment-executed: "&aCeza başarıyla uygulandı!"
+  no-punishments: "&eOyuncunun hiç cezası bulunmuyor."
+  unknown-command: "&cBilinmeyen komut! Kullanım: /dpunish help"
+  test-usage: "&cKullanım: /dpunish test <database|discord>"
+  usage: "&cKullanım: /ceza <oyuncu>"
+  
+  # General messages
+  general:
+    player-only: "&cBu komut sadece oyuncular tarafından kullanılabilir!"
+    no-permission: "&cBu komutu kullanma yetkiniz yok!"
+  
+  # Punishment history messages
+  punishment-history: "&6=== %player% Ceza Geçmişi ==="
+  punishment-summary: "&7Toplam Ceza: &e%total% &7| &7Gösterilen: &e%shown%"
+  punishment-entry: "&7%index%. &f%date% &8- &c%type%"
+  punishment-reason: "   &7Sebep: &f%reason%"
+  punishment-details: "   &7Yetkili: &e%admin% &8| &7Durum: %status%"
+  
+  # Status indicators
+  status:
+    active: "&aAktif"
+    inactive: "&cPasif"
+    
+  # Dividers
+  divider-long: "&8──────────────────────────────────────────────────"
+  divider-short: "&8──────────────────────────────"
+  
+  # Configuration messages
+  config-reloaded: "&aKonfigürasyon başarıyla yeniden yüklendi!"
+  
+  # Cooldown messages
+  cooldown:
+    mute: "&cSusturma komutu için %time% saniye beklemelisiniz!"
+    ban: "&cYasaklama komutu için %time% saniye beklemelisiniz!"
+    kick: "&cAtma komutu için %time% saniye beklemelisiniz!"
+    tempban: "&cGeçici yasaklama komutu için %time% saniye beklemelisiniz!"
+    jail: "&cHapis komutu için %time% saniye beklemelisiniz!"
+    warn: "&cUyarı komutu için %time% saniye beklemelisiniz!"
+    
+  # Daily limit messages
+  daily-limit:
+    mute: "&cGünlük susturma limitine ulaştınız!"
+    ban: "&cGünlük yasaklama limitine ulaştınız!"
+    kick: "&cGünlük atma limitine ulaştınız!"
+    tempban: "&cGünlük geçici yasaklama limitine ulaştınız!"
+    jail: "&cGünlük hapis limitine ulaştınız!"
+    warn: "&cGünlük uyarı limitine ulaştınız!"
+    
+  # Log messages
+  log:
+    config-reloaded: "Konfigürasyon %sender% tarafından yeniden yüklendi"
+    config-reload-error: "Konfigürasyon yeniden yükleme hatası: %error%"
+    token-not-configured: "Discord bot token'i yapılandırılmamış! Lütfen config.yml'de ayarlayın"
+    bot-ready: "Discord bot hazır! Giriş yapıldı: %tag%"
+    guild-not-found: "Guild bulunamadı ID: %guild_id%"
+    commands-registered: "Discord komutları başarıyla kayıt edildi!"
+    commands-register-failure: "Discord komutları kayıt edilemedi: %error%"
+    no-log-channel: "Ceza bildirimleri için uygun metin kanalı bulunamadı!"
+    notification-sent: "Ceza bildirimi Discord log kanalına gönderildi"
+    notification-failure: "Ceza bildirimi gönderilemedi: %error%"
+    player-not-found: "Oyuncu bulunamadı: %player%"
+    no-punishment-command: "Ceza türü için komut bulunamadı: %type%, sebep: %reason%"
+    punishment-executed: "Ceza uygulandı: %admin%, %player% oyuncusuna %reason% sebebi ile ceza verdi (Tür: %type%)"
+    punishment-failure: "Ceza komutu çalıştırılamadı: %command%"
+    plugin-enabled: "DiscordPunishBot etkinleştirildi!"
+    bot-connecting: "Discord bot bağlanıyor..."
+    plugin-disabled: "DiscordPunishBot devre dışı bırakıldı!"
+    config-save-error: "Konfigürasyon dosyası kaydedilemedi: %error%"
+    cooldown-triggered: "%admin% için %type% komutunda cooldown tetiklendi"
+    daily-limit-reached: "%admin% için %type% komutunda günlük limit ulaşıldı"
+    appeal-created: "%player% oyuncusu #%appeal_id% ID'li itiraz oluşturdu (Ceza ID: %punishment_id%)"
+    report-created: "%reporter% oyuncusu %reported% oyuncusunu şikayet etti (ID: #%report_id%, Sebep: %reason%)"
+    appeals-table-created: "Appeals tablosu başarıyla oluşturuldu"
+    appeals-table-error: "Appeals tablosu oluşturma hatası: %error%"
+    reports-table-created: "Reports tablosu başarıyla oluşturuldu"
+    reports-table-error: "Reports tablosu oluşturma hatası: %error%"
+    appeal-create-error: "İtiraz oluşturma hatası: %error%"
+    appeal-get-error: "İtiraz alma hatası: %error%"
+    appeals-get-error: "İtirazları alma hatası: %error%"
+    pending-appeals-error: "Bekleyen itirazları alma hatası: %error%"
+    appeal-approve-error: "İtiraz onaylama hatası: %error%"
+    appeal-reject-error: "İtiraz reddetme hatası: %error%"
+    active-appeal-check-error: "Aktif itiraz kontrol hatası: %error%"
+    appeal-approved: "#%appeal_id% ID'li itiraz %reviewer% tarafından onaylandı"
+    appeal-rejected: "#%appeal_id% ID'li itiraz %reviewer% tarafından reddedildi"
+    punishment-removed: "%player% oyuncusunun cezası itiraz (#%appeal_id%) sebebiyle kaldırıldı"
+    old-appeals-cleaned: "%count% adet eski itiraz temizlendi"
+    appeals-cleanup-error: "Eski itirazları temizleme hatası: %error%"
+    report-create-error: "Şikayet oluşturma hatası: %error%"
+    report-get-error: "Şikayet alma hatası: %error%"
+    reports-get-error: "Şikayetleri alma hatası: %error%"
+    status-reports-error: "Durumsal şikayetleri alma hatası: %error%"
+    report-priority-updated: "#%report_id% ID'li şikayetin önceliği %priority% olarak güncellendi"
+    report-priority-error: "Şikayet öncelik güncelleme hatası: %error%"
+    report-evidence-added: "#%report_id% ID'li şikayete kanıt eklendi"
+    report-evidence-error: "Şikayete kanıt ekleme hatası: %error%"
+    report-count-error: "Şikayet sayısı alma hatası: %error%"
+    report-status-updated: "#%report_id% ID'li şikayetin durumu %status% olarak güncellendi (%reviewer% tarafından)"
+    report-update-error: "Şikayet güncelleme hatası: %error%"
+    old-reports-cleaned: "%count% adet eski şikayet temizlendi"
+    reports-cleanup-error: "Eski şikayetleri temizleme hatası: %error%"
+    
+  # Help command messages
+  help:
+    - "&6&l=== DiscordPunishBot Yardım ==="
+    - "&e/dpunish reload &7- Konfigürasyonu yeniden yükle"
+    - "&e/dpunish info &7- Plugin bilgilerini göster"
+    - "&e/dpunish test <type> &7- Bağlantıları test et"
+    - "&e/dpunish stats &7- Genel istatistikleri göster"
+    - "&e/ceza <oyuncu> &7- Oyuncu ceza geçmişini görüntüle"
+    - "&8────────────────────────────────────────"
+    - "&7Discord botunu kullanarak ceza vermek için Discord sunucunuzdaki"
+    - "&7slash komutlarını kullanın: &e/mute, /ban, /kick, /tempban, /jail, /warn, /ceza"
+    
+  # Info command messages
+  info:
+    header: "&6&l=== DiscordPunishBot Bilgileri ==="
+    version: "&7Versiyon: &e%version%"
+    author: "&7Yapımcı: &e%author%"
+    java-version: "&7Java Versiyonu: &e%java_version%"
+    server-version: "&7Sunucu Versiyonu: &e%server_version%"
+    database: "&7Veritabanı: &e%db_type%"
+    discord-status:
+      online: "&7Discord Bot: &aÇevrimiçi"
+      offline: "&7Discord Bot: &cÇevrimdışı"
+    divider: "&8──────────────────────────────"
+    punishment-types: "&7Yapılandırılmış Ceza Türleri:"
+    mute-count: "&7• Susturma: &e%count% sebep"
+    ban-count: "&7• Yasaklama: &e%count% sebep"
+    kick-count: "&7• Atma: &e%count% sebep"
+    tempban-count: "&7• Geçici Yasaklama: &e%count% sebep"
+    jail-count: "&7• Hapis: &e%count% sebep"
+    warn-count: "&7• Uyarı: &e%count% sebep"
+    other-count: "&7• Diğer: &e%count% sebep"
+    
+  # Test command messages
+  test:
+    database:
+      start: "&7Veritabanı bağlantısı test ediliyor..."
+      success: "&a✓ Veritabanı bağlantısı başarılı!"
+      failure: "&c✗ Veritabanı bağlantısı başarısız!"
+      error: "&c✗ Veritabanı hatası: %error%"
+    discord:
+      start: "&7Discord bot bağlantısı test ediliyor..."
+      success: "&a✓ Discord bot bağlantısı aktif!"
+      failure: "&c✗ Discord bot bağlantısı yok!"
+      check-token: "&7Token kontrol edin ve botu yeniden başlatın."
+      guild-configured: "&a✓ Guild ID yapılandırılmış: %guild_id%"
+      guild-not-configured: "&c⚠ Guild ID yapılandırılmamış!"
+      roles:
+        header: "&7Roller:"
+        mute: "  &7• Mute: %status%"
+        ban: "  &7• Ban: %status%"
+        kick: "  &7• Kick: %status%"
+        tempban: "  &7• TempBan: %status%"
+        jail: "  &7• Jail: %status%"
+        warn: "  &7• Warn: %status%"
+        other: "  &7• Other: %status%"
+      log-channel-configured: "&a✓ Log kanalı ID yapılandırılmış: %channel_id%"
+      log-channel-not-configured: "&c⚠ Log kanalı ID yapılandırılmamış!"
+      log-channel-accessible: "&a✓ Log kanalı erişilebilir"
+      log-channel-access-failure: "&c⚠ Log kanalı erişim testi başarısız"
+      error: "&c✗ Discord test hatası: %error%"
+    invalid-type: "&cGeçerli test türleri: database, discord"
+    
+  # Stats command messages
+  stats:
+    start: "&7İstatistikler hesaplanıyor..."
+    header: "&6&l=== Sunucu Ceza İstatistikleri ==="
+    total: "&7Toplam Cezalar: &e%count%"
+    today: "&7Bugünkü Cezalar: &e%count%"
+    unique-players: "&7Cezalı Oyuncular: &e%count%"
+    divider: "&8──────────────────────────────"
+    types:
+      type-header: "&7Ceza Türleri:"
+      mute: "&7• Susturma: &e%count% &8(%percentage%%)"
+      ban: "&7• Yasaklama: &c%count% &8(%percentage%%)"
+      kick: "&7• Atma: &6%count% &8(%percentage%%)"
+      tempban: "&7• Geçici Yasaklama: &5%count% &8(%percentage%%)"
+      jail: "&7• Hapis: &b%count% &8(%percentage%%)"
+      warn: "&7• Uyarı: &a%count% &8(%percentage%%)"
+      other: "&7• Diğer: &b%count% &8(%percentage%%)"
+    error: "&cİstatistik hatası: %error%"
+    
+  # Ceza command stats
+  ceza-stats:
+    header: "&6İstatistikler:"
+    types: "&7Susturma: &e%mute_count% &8| &7Yasaklama: &c%ban_count% &8| &7Atma: &6%kick_count% &8| &7Geçici: &5%tempban_count% &8| &7Hapis: &b%jail_count% &8| &7Uyarı: &a%warn_count%"
+    active: "&7Aktif Cezalar: &%color%%count%"
+    latest: "&7Son Ceza: &f%date% &8(&e%reason%&8)"
+    
+  # Discord messages
+  discord:
+    no-permission: "❌ Bu komutu kullanma yetkiniz yok!"
+    invalid-reason: "❌ Geçersiz sebep! Lütfen aşağıdaki menüden seçim yapın:"
+    reason-menu-placeholder: "Ceza sebebini seçin..."
+    reason-menu: "**%player%** için %type% sebebini seçin:"
+    reason-menu-option: "Sebep: %display%"
+    punishment-executing: "⏳ Ceza uygulanıyor..."
+    punishment-success: "✅ **%player%** oyuncusuna **%reason%** cezası başarıyla uygulandı!"
+    ceza-embed-title: "📋 %player% - Ceza Geçmişi"
+    ceza-embed-footer: "Toplam %total% ceza"
+    ceza-no-punishments: "Bu oyuncunun hiç cezası bulunmuyor."
+    ceza-entry: "**%index%.** %date% - **%type%** - %reason%\n*%admin% tarafından - %status%*\n\n"
+    status:
+      active: "Aktif"
+      inactive: "Pasif"
+    embed-field-player: "👤 Oyuncu"
+    embed-field-type: "⚖️ Ceza Türü"
+    embed-field-reason: "📝 Sebep"
+    embed-field-admin: "👮 Yetkili"
+    embed-field-date: "🕐 Tarih"
+    embed-field-duration: "⏰ Süre"
+    embed-field-id: "📊 ID"
+    duration-permanent: "Kalıcı"
+    duration-unit-seconds: " saniye"
+    duration-unit-minutes: " dakika"
+    duration-unit-hours: " saat"
+    duration-unit-days: " gün"
+    duration-unit-weeks: " hafta"
+    type-display:
+      mute: "susturma"
+      ban: "yasaklama"
+      kick: "atma"
+      tempban: "geçici yasaklama"
+      jail: "hapis"
+      warn: "uyarı"
+      other: "diğer ceza"
+    commands:
+      mute:
+        description: "Oyuncuyu sustur"
+        option-player: "Susturulacak oyuncu"
+        option-reason: "Susturma sebebi"
+      ban:
+        description: "Oyuncuyu yasakla"
+        option-player: "Yasaklanacak oyuncu"
+        option-reason: "Yasaklama sebebi"
+      kick:
+        description: "Oyuncuyu at"
+        option-player: "Atılacak oyuncu"
+        option-reason: "Atma sebebi"
+      tempban:
+        description: "Oyuncuyu geçici olarak yasakla"
+        option-player: "Geçici yasaklanacak oyuncu"
+        option-reason: "Geçici yasaklama sebebi"
+      jail:
+        description: "Oyuncuyu hapse at"
+        option-player: "Hapse atılacak oyuncu"
+        option-reason: "Hapis sebebi"
+      warn:
+        description: "Oyuncuya uyarı ver"
+        option-player: "Uyarılacak oyuncu"
+        option-reason: "Uyarı sebebi"
+      other:
+        description: "Diğer ceza türleri"
+        option-player: "Cezalandırılacak oyuncu"
+        option-reason: "Ceza sebebi"
+      ceza:
+        description: "Oyuncunun ceza geçmişini görüntüle"
+        option-player: "Sorgulanacak oyuncu"
+        
+  # Punishment type display names
+  punishment-types:
+    mute: "Mute/Susturma"
+    ban: "Ban/Yasaklama"
+    kick: "Kick/Atma"
+    tempban: "TempBan/Geçici Yasaklama"
+    jail: "Jail/Hapis"
+    warn: "Warn/Uyarı"
+    default: "%type%"
+    
+  # Format for Punishment.toString()
+  punishment-to-string: "Punishment{id=%id%, player='%player%', type='%type%', reason='%reason%', admin='%admin%', date='%date%'}"
+
+# Appeal System Messages
+appeal:
+  no-punishments: "&c&l[!] &cMevcut aktif cezanız bulunmuyor."
+  available-punishments: "&e&l[İTİRAZ] &7İtiraz edebileceğiniz cezalar:"
+  punishment-entry: "&7%id%. &f%type% &7- &e%reason% &7(%date%) &8- &7Admin: &f%admin%"
+  usage-help: "&a/appeal <ceza_id> <itiraz_sebebi> &7- İtiraz oluştur"
+  usage-create: "&cKullanım: &f/appeal <ceza_id> <itiraz_sebebi>"
+  usage-status: "&cKullanım: &f/appeal status <itiraz_id>"
+  no-appeals: "&c&l[!] &cHiç itirazınız bulunmuyor."
+  appeals-header: "&e&l[İTİRAZ] &7%player% oyuncusunun itirazları:"
+  appeal-entry: "&7%id%. &fCeza ID: &e%punishment_id% &7- &f%status% &7(%date%)"
+  admin-response: "&a&l[ADMIN] &7%admin%: &f%response% &7(%date%)"
+  not-found: "&c&l[!] &cBu ID ile itiraz bulunamadı."
+  not-yours: "&c&l[!] &cBu itiraz size ait değil."
+  status-header: "&e&l[İTİRAZ #%id%] &7Durum Bilgileri:"
+  status-punishment: "&7Ceza ID: &f%punishment_id%"
+  status-reason: "&7İtiraz Sebebi: &f%reason%"
+  status-status: "&7Durum: &f%status%"
+  status-date: "&7Tarih: &f%date%"
+  status-reviewer: "&7İnceleyen: &f%reviewer% &7(%date%)"
+  status-response: "&7Admin Yanıtı: &f%response%"
+  reason-too-short: "&c&l[!] &cİtiraz sebebi en az 10 karakter olmalıdır."
+  reason-too-long: "&c&l[!] &cİtiraz sebebi en fazla 500 karakter olabilir."
+  cooldown: "&c&l[!] &cİtiraz oluşturmadan önce &e%hours% saat &cbeklemelisiniz."
+  already-exists: "&c&l[!] &cBu ceza için zaten aktif bir itirazınız var."
+  created: "&a&l[✓] &aİtirazınız başarıyla oluşturuldu! ID: &e#%id% &a(Ceza ID: %punishment_id%)"
+  creation-failed: "&c&l[!] &cİtiraz oluşturulurken bir hata oluştu."
+  invalid-punishment-id: "&c&l[!] &cGeçersiz ceza ID numarası."
+  invalid-id: "&c&l[!] &cGeçersiz itiraz ID numarası."
+  help-header: "&e&l[İTİRAZ] &7Yardım Menüsü:"
+  help-list: "&f/appeal &7- İtiraz edilebilir cezaları listele"
+  help-create: "&f/appeal <ceza_id> <sebep> &7- Yeni itiraz oluştur"
+  help-status: "&f/appeal status <itiraz_id> &7- İtiraz durumunu kontrol et"
+  help-list-cmd: "&f/appeal list &7- Tüm itirazlarını listele"
+  approved: "&a&l[✓] &aİtirazınız onaylandı! ID: &e#%appeal_id% &7Yanıt: &f%response%"
+  rejected: "&c&l[!] &cİtirazınız reddedildi! ID: &e#%appeal_id% &7Yanıt: &f%response%"
+
+# Report System Messages
+report:
+  usage-header: "&e&l[ŞİKAYET] &7Kullanım Bilgileri:"
+  usage: "&f/report <oyuncu> <sebep> [açıklama] &7- Şikayet oluştur"
+  usage-anonymous: "&f/report anonymous <oyuncu> <sebep> [açıklama] &7- Anonim şikayet"
+  usage-list: "&f/report list &7- Şikayetlerini listele"
+  usage-status: "&f/report status <şikayet_id> &7- Şikayet durumu"
+  usage-help: "&f/report help &7- Yardım menüsü"
+  no-reports: "&c&l[!] &cHiç şikayetiniz bulunmuyor."
+  reports-header: "&e&l[ŞİKAYET] &7%player% oyuncusunun şikayetleri:"
+  report-entry: "&7%id%. &f%reported% &7- &e%reason% &7[&f%status%&7] &8Öncelik: %priority% &7(%date%)"
+  not-found: "&c&l[!] &cBu ID ile şikayet bulunamadı."
+  not-yours: "&c&l[!] &cBu şikayet size ait değil."
+  status-header: "&e&l[ŞİKAYET #%id%] &7Durum Bilgileri:"
+  status-reporter: "&7Şikayet Eden: &f%reporter%"
+  status-reported: "&7Şikayet Edilen: &f%reported%"
+  status-reason: "&7Sebep: &f%reason%"
+  status-description: "&7Açıklama: &f%description%"
+  status-status: "&7Durum: &f%status%"
+  status-priority: "&7Öncelik: &f%priority%"
+  status-date: "&7Tarih: &f%date%"
+  status-reviewer: "&7İnceleyen: &f%reviewer% &7(%date%)"
+  status-response: "&7Admin Yanıtı: &f%response%"
+  status-evidence: "&7Kanıt: &f%evidence%"
+  reason-too-short: "&c&l[!] &cŞikayet sebebi en az 3 karakter olmalıdır."
+  description-too-long: "&c&l[!] &cAçıklama en fazla 500 karakter olabilir."
+  cooldown: "&c&l[!] &cŞikayet oluşturmadan önce &e%minutes% dakika &cbeklemelisiniz."
+  player-not-found: "&c&l[!] &c%player% isimli oyuncu bulunamadı."
+  cannot-report-self: "&c&l[!] &cKendinizi şikayet edemezsiniz."
+  too-many-recent-reports: "&c&l[!] &cBu oyuncu çok fazla şikayet almış. Lütfen daha sonra tekrar deneyin."
+  created: "&a&l[✓] &aŞikayetiniz başarıyla oluşturuldu! ID: &e#%id% &a(Oyuncu: %reported%, Anonim: %anonymous%)"
+  creation-failed: "&c&l[!] &cŞikayet oluşturulurken bir hata oluştu."
+  invalid-id: "&c&l[!] &cGeçersiz şikayet ID numarası."
+  moderator-notification: "&c&l[ŞİKAYET] &7%reporter% → %reported% oyuncusunu şikayet etti &f(%reason%) &7ID: #%report_id%"
+  anonymous-yes: "Evet"
+  anonymous-no: "Hayır"
+  help-header: "&e&l[ŞİKAYET] &7Yardım Menüsü:"
+  help-create: "&f/report <oyuncu> <sebep> [açıklama] &7- Şikayet oluştur"
+  help-anonymous: "&f/report anonymous <oyuncu> <sebep> [açıklama] &7- Anonim şikayet"
+  help-list: "&f/report list &7- Şikayetlerini listele"
+  help-status: "&f/report status <id> &7- Şikayet durumunu kontrol et"
+  help-reasons: "&7Yaygın sebepler:"
+  available-reasons: "&7%reasons%"
+  status-update:
+    pending: "&e&l[ŞİKAYET] &7Şikayetiniz (#%report_id%) beklemede: &f%reported%"
+    under_review: "&b&l[ŞİKAYET] &7Şikayetiniz (#%report_id%) inceleniyor: &f%reported%"
+    investigating: "&9&l[ŞİKAYET] &7Şikayetiniz (#%report_id%) detaylı inceleme altında: &f%reported%"
+    resolved: "&a&l[ŞİKAYET] &7Şikayetiniz (#%report_id%) çözüldü: &f%reported% &7Yanıt: %response%"
+    dismissed: "&c&l[ŞİKAYET] &7Şikayetiniz (#%report_id%) reddedildi: &f%reported% &7Yanıt: %response%"
+    duplicate: "&e&l[ŞİKAYET] &7Şikayetiniz (#%report_id%) tekrar: &f%reported% &7Yanıt: %response%"
+
+# Status Messages
+status:
+  pending: "Beklemede"
+  approved: "Onaylandı"
+  rejected: "Reddedildi"
+  under_review: "İnceleniyor"
+  investigating: "Detaylı İnceleme"
+  resolved: "Çözüldü"
+  dismissed: "Reddedildi"
+  duplicate: "Tekrar"
+  active: "Aktif"
+  inactive: "Pasif"
+
+# Priority Messages
+priority:
+  low: "Düşük"
+  medium: "Orta"
+  high: "Yüksek"
+  urgent: "Acil"
+
+# Discord Messages
+discord:
+  appeal:
+    new-title: "Yeni İtiraz"
+    approved-title: "İtiraz Onaylandı"
+    rejected-title: "İtiraz Reddedildi"
+    field-id: "İtiraz ID"
+    field-punishment: "Ceza ID"
+    field-player: "Oyuncu"
+    field-reason: "İtiraz Sebebi"
+    field-date: "Tarih"
+    field-status: "Durum"
+    field-reviewer: "İnceleyen"
+    field-reviewed-date: "İnceleme Tarihi"
+    field-response: "Admin Yanıtı"
+    footer: "Otomatik İtiraz Sistemi"
+  report:
+    new-title: "Yeni Şikayet"
+    updated-title: "Şikayet Güncellendi"
+    field-id: "Şikayet ID"
+    field-reported: "Şikayet Edilen"
+    field-reporter: "Şikayet Eden"
+    field-reason: "Sebep"
+    field-description: "Açıklama"
+    field-priority: "Öncelik"
+    field-status: "Durum"
+    field-date: "Tarih"
+    field-reviewer: "İnceleyen"
+    field-response: "Admin Yanıtı"
+    field-evidence: "Kanıt"
+    footer: "Otomatik Şikayet Sistemi"

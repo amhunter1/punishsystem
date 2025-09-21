@@ -1,0 +1,103 @@
+name: DiscordPunishBot
+version: 2.0.0
+main: com.melut.punishsystem.DiscordPunishBot
+api-version: '1.20'
+prefix: DiscordPunish
+author: melut
+description: Discord punishment bot for Minecraft server with Appeal & Report system made by melut
+website: https://github.com/amhunter1/punishsystem
+
+softdepend: [PlaceholderAPI, Essentials]
+
+commands:
+  ceza:
+    description: Shows player's punishment history
+    usage: /ceza <oyuncu>
+    permission: discordpunish.ceza
+  dpunish:
+    description: Main punishment command
+    usage: /dpunish <reload|help|info|test|stats|language>
+    permission: discordpunish.admin
+  appeal:
+    description: Appeal a punishment
+    usage: /appeal [punishment_id] [reason] | list | status <id> | help
+    permission: discordpunish.appeal
+    aliases: [itiraz]
+  report:
+    description: Report a player for rule violations
+    usage: /report <player> <reason> [description] | list | status <id> | help
+    permission: discordpunish.report.create
+    aliases: [sikayet]
+
+permissions:
+  discordpunish.*:
+    description: Gives access to all DiscordPunishBot permissions
+    children:
+      discordpunish.admin: true
+      discordpunish.ceza: true
+      discordpunish.mute: true
+      discordpunish.ban: true
+      discordpunish.kick: true
+      discordpunish.tempban: true
+      discordpunish.jail: true
+      discordpunish.warn: true
+      discordpunish.appeal: true
+      discordpunish.report.*: true
+  discordpunish.admin:
+    description: Admin permissions
+    default: op
+  discordpunish.ceza:
+    description: Permission to check punishment history
+    default: true
+  discordpunish.mute:
+    description: Permission to mute players
+    default: op
+  discordpunish.ban:
+    description: Permission to ban players
+    default: op
+  discordpunish.kick:
+    description: Permission to kick players
+    default: op
+  discordpunish.tempban:
+    description: Permission to tempban players
+    default: op
+  discordpunish.jail:
+    description: Permission to jail players
+    default: op
+  discordpunish.warn:
+    description: Permission to warn players
+    default: op
+  discordpunish.appeal:
+    description: Permission to create and view own appeals
+    default: true
+  discordpunish.report.*:
+    description: All report permissions
+    default: op
+    children:
+      discordpunish.report.create: true
+      discordpunish.report.list: true
+      discordpunish.report.viewall: true
+      discordpunish.report.notify: true
+  discordpunish.report.create:
+    description: Permission to create reports
+    default: true
+  discordpunish.report.list:
+    description: Permission to view own reports
+    default: true
+  discordpunish.report.viewall:
+    description: Permission to view all reports
+    default: op
+  discordpunish.report.notify:
+    description: Receives notifications when new reports are created
+    default: op
+##############################################################################
+#                                                                            #
+#  This plugin was developed by [Melüt].                                     #
+#                                                                            #
+#  For support, contributions, or to connect:                                #
+#  Discord Community: [https://discord.com/users/871721944268038175]         #
+#  GitHub Repository: [https://github.com/amhunter1]                         #
+#                                                                            #
+#  Thank you for using this plugin!                                          #
+#                                                                            #
+##############################################################################

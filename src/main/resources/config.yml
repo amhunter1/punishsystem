@@ -1,0 +1,300 @@
+# DiscordPunishBot Configuration
+# Discord Punishment Bot for Minecraft Server
+# Version: 1.1.0
+# ÖNEMLİ!!! CONFİGTE EDİTLEDİĞİN YERLERE " KOYMAYI UNUTMAYIN YOKSA ÇALIŞMAZ.
+# IMPORTANT!!! DO NOT FORGET TO PUT "WHERE YOU EDIT THE CONFIG, OR IT WILL NOT WORK.
+# Discord Bot Settings
+discord:
+  # Bot token from Discord Developer Portal
+  token: "YOUR_BOT_TOKEN_HERE"
+
+  # Your Discord server (guild) ID
+  guild-id: "YOUR_GUILD_ID_HERE"
+
+  # Log channel ID for punishment notifications
+  log-channel-id: "LOG_CHANNEL_ID_HERE"
+
+  # Report system channel IDs
+  report-log-channel-id: "REPORT_LOG_CHANNEL_ID_HERE"  # Özel report log kanalı
+  appeal-channel-id: "APPEAL_CHANNEL_ID_HERE"          # İtiraz kanalı
+  
+  # Report log admin role - bu role sahip olanlar reportları onaylayabilir/reddedebilir
+  report-admin-role-id: "REPORT_ADMIN_ROLE_ID"
+
+  # Role IDs that can use punishment commands
+  roles:
+    mute: "MUTE_ROLE_ID"      # Role that can use /mute command
+    ban: "BAN_ROLE_ID"        # Role that can use /ban command
+    kick: "KICK_ROLE_ID"      # Role that can use /kick command
+    tempban: "TEMPBAN_ROLE_ID" # Role that can use /tempban command
+    jail: "JAIL_ROLE_ID"      # Role that can use /jail command
+    warn: "WARN_ROLE_ID"      # Role that can use /warn command
+    other: "OTHER_ROLE_ID"    # Role that can use /diger command
+
+  # Embed settings for Discord notifications
+  embeds:
+    punishment:
+      title: "🔨 Yeni Ceza"
+      footer: "Sunucu Ceza Sistemi"
+      # Colors are automatically set based on punishment type:
+      # Mute: Orange (0xF39C12), Ban: Red (0xE74C3C), Kick: Yellow (0xF1C40F)
+      # TempBan: Purple (0x9B59B6), Jail: Blue (0x3498DB), Warn: Green (0x2ECC71)
+
+# Database Configuration
+database:
+  # Database type: sqlite or mysql
+  type: "sqlite"
+
+  # MySQL settings (only if type is mysql)
+  host: "localhost"
+  port: 3306
+  database: "punishments"
+  username: "root"
+  password: "password"
+
+# Punishment System Configuration
+punishments:
+  # Mute punishments - Susturma cezaları
+  mute:
+    agir-kufur:
+      command: "essentials:mute %player% 7h %reason%"
+      display: "Ağır Küfür"
+      duration: "7 saat"
+    spam:
+      command: "essentials:mute %player% 3h %reason%"
+      display: "Spam"
+      duration: "3 saat"
+    reklam:
+      command: "essentials:mute %player% 12h %reason%"
+      display: "Reklam"
+      duration: "12 saat"
+    kufur:
+      command: "essentials:mute %player% 2h %reason%"
+      display: "Küfür"
+      duration: "2 saat"
+    hakaret:
+      command: "essentials:mute %player% 5h %reason%"
+      display: "Hakaret"
+      duration: "5 saat"
+    flood:
+      command: "essentials:mute %player% 1h %reason%"
+      display: "Flood"
+      duration: "1 saat"
+
+  # Ban punishments - Kalıcı yasaklama
+  ban:
+    hile:
+      command: "essentials:ban %player% %reason%"
+      display: "Hile/Cheat"
+      duration: "Kalıcı"
+    griefing:
+      command: "essentials:ban %player% %reason%"
+      display: "Griefing"
+      duration: "Kalıcı"
+    duping:
+      command: "essentials:ban %player% %reason%"
+      display: "Duping"
+      duration: "Kalıcı"
+    exploit:
+      command: "essentials:ban %player% %reason%"
+      display: "Exploit Kullanımı"
+      duration: "Kalıcı"
+    ddos:
+      command: "essentials:ban %player% %reason%"
+      display: "DDoS Teşebbüsü"
+      duration: "Kalıcı"
+
+  # Kick punishments - Atma cezaları
+  kick:
+    uyari-kick:
+      command: "essentials:kick %player% %reason%"
+      display: "Uyarı Kick"
+      duration: "Anlık"
+    spam-kick:
+      command: "essentials:kick %player% %reason%"
+      display: "Spam Kick"
+      duration: "Anlık"
+    flood-kick:
+      command: "essentials:kick %player% %reason%"
+      display: "Flood Kick"
+      duration: "Anlık"
+
+  # TempBan punishments - Geçici yasaklama
+  tempban:
+    troll:
+      command: "essentials:tempban %player% 3d %reason%"
+      display: "Troll"
+      duration: "3 gün"
+    spam-tempban:
+      command: "essentials:tempban %player% 1d %reason%"
+      display: "Spam TempBan"
+      duration: "1 gün"
+    kufur-tempban:
+      command: "essentials:tempban %player% 7d %reason%"
+      display: "Küfür TempBan"
+      duration: "7 gün"
+    griefing-tempban:
+      command: "essentials:tempban %player% 14d %reason%"
+      display: "Griefing TempBan"
+      duration: "14 gün"
+    hile-tempban:
+      command: "essentials:tempban %player% 30d %reason%"
+      display: "Hile TempBan"
+      duration: "30 gün"
+
+  # Jail punishments - Hapis cezaları
+  jail:
+    kufur-jail:
+      command: "essentials:jail %player% 2h %reason%"
+      display: "Küfür Hapis"
+      duration: "2 saat"
+    spam-jail:
+      command: "essentials:jail %player% 1h %reason%"
+      display: "Spam Hapis"
+      duration: "1 saat"
+    griefing-jail:
+      command: "essentials:jail %player% 6h %reason%"
+      display: "Griefing Hapis"
+      duration: "6 saat"
+    troll-jail:
+      command: "essentials:jail %player% 4h %reason%"
+      display: "Troll Hapis"
+      duration: "4 saat"
+
+  # Warn punishments - Uyarı cezaları
+  warn:
+    uyari:
+      command: "essentials:warn %player% %reason%"
+      display: "Uyarı"
+      duration: "Kalıcı"
+    ilk-uyari:
+      command: "essentials:warn %player% %reason%"
+      display: "İlk Uyarı"
+      duration: "Kalıcı"
+    son-uyari:
+      command: "essentials:warn %player% %reason%"
+      display: "Son Uyarı"
+      duration: "Kalıcı"
+
+  # Other punishments - Diğer cezalar
+  other:
+    warn:
+      command: "essentials:warn %player% %reason%"
+      display: "Uyarı"
+      duration: "Kalıcı"
+    note:
+      command: "essentials:note %player% %reason%"
+      display: "Not"
+      duration: "Kalıcı"
+
+# Advanced Settings
+settings:
+  # Enable debug logging
+  debug: false
+  
+  # Default language (tr = Turkish, en = English)
+  # Available languages: tr, en
+  language: "tr"
+
+  # Maximum punishments to show in /ceza command
+  max-punishment-display: 10
+
+  # Auto-save interval (in minutes)
+  auto-save-interval: 30
+
+  # Date format for punishment display
+  date-format: "dd.MM.yyyy HH:mm"
+
+  # Enable punishment cooldowns (in seconds)
+  cooldowns:
+    enabled: true
+    mute: 30
+    ban: 60
+    kick: 15
+    tempban: 45
+    jail: 30
+    warn: 10
+
+  # Enable punishment limits per day
+  daily-limits:
+    enabled: true
+    mute: 50
+    ban: 20
+    kick: 100
+    tempban: 30
+    jail: 40
+    warn: 200
+
+# Ödül Sistemi Ayarları
+reward-system:
+  # Ödül sistemi aktif mi?
+  enabled: true
+  
+  # İtiraz onaylandığında çalışacak komutlar (konsoldan çalıştırılır)
+  appeal-approved-commands:
+    - "eco give %player% 500"
+    - "broadcast %player% oyuncusunun itirazı onaylandı!"
+  
+  # Report doğru çıktığında çalışacak komutlar
+  report-correct-commands:
+    - "eco give %player% 250"
+    - "msg %player% Şikayetin doğru çıktı, ödülün hesabına eklendi!"
+  
+  # İtiraz onaylandığında oyuncuya gönderilecek özel mesaj
+  appeal-approved-message: "§a§l[İTİRAZ] §7İtirazın onaylandı! §e500 coin §7hesabına eklendi."
+  
+  # Report onaylandığında oyuncuya gönderilecek özel mesaj
+  report-approved-message: "§a§l[ŞİKAYET] §7Şikayetin doğru çıktı! §e250 coin §7hesabına eklendi."
+
+# NOTE: All messages have been moved to language files!
+# Check the lang/ folder for turkish.yml and english.yml
+# You can change the language using the setting above or /dpunish language <tr|en>
+
+# Command placeholders:
+# %player% - Punished player name
+# %reason% - Punishment reason
+# %admin% - Admin who issued the punishment
+# %date% - Date and time of punishment
+# %version% - Plugin version
+# %author% - Plugin author
+# %java_version% - Java version
+# %server_version% - Server version
+# %db_type% - Database type
+# %count% - Number of items (e.g., punishments, reasons)
+# %percentage% - Percentage value
+# %guild_id% - Discord guild ID
+# %channel_id% - Discord log channel ID
+# %status% - Status indicator (e.g., ✓ or ✗)
+# %sender% - Name of the command sender
+# %error% - Error message
+# %total% - Total number of punishments
+# %shown% - Number of punishments shown
+# %index% - Punishment index in the list
+# %type% - Punishment type
+# %mute_count% - Number of mute punishments
+# %ban_count% - Number of ban punishments
+# %kick_count% - Number of kick punishments
+# %tempban_count% - Number of tempban punishments
+# %jail_count% - Number of jail punishments
+# %warn_count% - Number of warn punishments
+# %other_count% - Number of other punishments
+# %color% - Color code for active punishments (c for red, a for green)
+# %tag% - Discord bot tag
+# %display% - Display name of a punishment reason
+# %id% - Punishment ID
+# %command% - Punishment command executed
+# %time% - Cooldown time remaining
+# %duration% - Punishment duration
+
+##############################################################################
+#                                                                            #
+#  This plugin was developed by [Melüt].                                     #
+#                                                                            #
+#  For support, contributions, or to connect:                                #
+#  Discord Community: [https://discord.com/users/871721944268038175]         #
+#  GitHub Repository: [https://github.com/amhunter1]                         #
+#                                                                            #
+#  Thank you for using this plugin!                                          #
+#                                                                            #
+
+##############################################################################

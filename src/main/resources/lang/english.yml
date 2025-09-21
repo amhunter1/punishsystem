@@ -1,0 +1,421 @@
+# English Language File for DiscordPunishBot
+# İngilizce Dil Dosyası
+language: "en"
+name: "English"
+
+# Plugin Messages
+messages:
+  # Permission and error messages
+  no-permission: "&cYou don't have permission to use this command!"
+  player-not-found: "&cPlayer not found!"
+  punishment-executed: "&aPunishment successfully applied!"
+  no-punishments: "&ePlayer has no punishment history."
+  unknown-command: "&cUnknown command! Usage: /dpunish help"
+  test-usage: "&cUsage: /dpunish test <database|discord>"
+  usage: "&cUsage: /ceza <player>"
+  
+  # General messages
+  general:
+    player-only: "&cThis command can only be used by players!"
+    no-permission: "&cYou don't have permission to use this command!"
+  
+  # Punishment history messages
+  punishment-history: "&6=== %player% Punishment History ==="
+  punishment-summary: "&7Total Punishments: &e%total% &7| &7Shown: &e%shown%"
+  punishment-entry: "&7%index%. &f%date% &8- &c%type%"
+  punishment-reason: "   &7Reason: &f%reason%"
+  punishment-details: "   &7Admin: &e%admin% &8| &7Status: %status%"
+  
+  # Status indicators
+  status:
+    active: "&aActive"
+    inactive: "&cInactive"
+    
+  # Dividers
+  divider-long: "&8──────────────────────────────────────────────────"
+  divider-short: "&8──────────────────────────────"
+  
+  # Configuration messages
+  config-reloaded: "&aConfiguration successfully reloaded!"
+  
+  # Cooldown messages
+  cooldown:
+    mute: "&cYou must wait %time% seconds before using mute command!"
+    ban: "&cYou must wait %time% seconds before using ban command!"
+    kick: "&cYou must wait %time% seconds before using kick command!"
+    tempban: "&cYou must wait %time% seconds before using tempban command!"
+    jail: "&cYou must wait %time% seconds before using jail command!"
+    warn: "&cYou must wait %time% seconds before using warn command!"
+    
+  # Daily limit messages
+  daily-limit:
+    mute: "&cDaily mute limit reached!"
+    ban: "&cDaily ban limit reached!"
+    kick: "&cDaily kick limit reached!"
+    tempban: "&cDaily tempban limit reached!"
+    jail: "&cDaily jail limit reached!"
+    warn: "&cDaily warn limit reached!"
+    
+  # Log messages
+  log:
+    config-reloaded: "Configuration reloaded by %sender%"
+    config-reload-error: "Failed to reload config: %error%"
+    token-not-configured: "Discord bot token not configured! Please set it in config.yml"
+    bot-ready: "Discord bot is ready! Logged in as: %tag%"
+    guild-not-found: "Guild not found with ID: %guild_id%"
+    commands-registered: "Discord commands registered successfully!"
+    commands-register-failure: "Failed to register Discord commands: %error%"
+    no-log-channel: "No suitable text channel found for punishment notifications!"
+    notification-sent: "Punishment notification sent to Discord log channel"
+    notification-failure: "Failed to send punishment notification: %error%"
+    player-not-found: "Player not found: %player%"
+    no-punishment-command: "No command found for punishment type: %type%, reason: %reason%"
+    punishment-executed: "Punishment executed: %admin% punished %player% for %reason% (Type: %type%)"
+    punishment-failure: "Failed to execute punishment command: %command%"
+    plugin-enabled: "DiscordPunishBot has been enabled!"
+    bot-connecting: "Discord bot connecting..."
+    plugin-disabled: "DiscordPunishBot has been disabled!"
+    config-save-error: "Config file could not be saved: %error%"
+    cooldown-triggered: "Cooldown triggered for %admin% on %type% command"
+    daily-limit-reached: "Daily limit reached for %admin% on %type% command"
+    appeal-created: "Player %player% created appeal #%appeal_id% (Punishment ID: %punishment_id%)"
+    report-created: "Player %reporter% reported %reported% (ID: #%report_id%, Reason: %reason%)"
+    appeals-table-created: "Appeals table created successfully"
+    appeals-table-error: "Appeals table creation error: %error%"
+    reports-table-created: "Reports table created successfully"
+    reports-table-error: "Reports table creation error: %error%"
+    appeal-create-error: "Appeal creation error: %error%"
+    appeal-get-error: "Appeal retrieval error: %error%"
+    appeals-get-error: "Appeals retrieval error: %error%"
+    pending-appeals-error: "Pending appeals retrieval error: %error%"
+    appeal-approve-error: "Appeal approval error: %error%"
+    appeal-reject-error: "Appeal rejection error: %error%"
+    active-appeal-check-error: "Active appeal check error: %error%"
+    appeal-approved: "Appeal #%appeal_id% approved by %reviewer%"
+    appeal-rejected: "Appeal #%appeal_id% rejected by %reviewer%"
+    punishment-removed: "Player %player%'s punishment was removed due to appeal (#%appeal_id%)"
+    old-appeals-cleaned: "%count% old appeals cleaned up"
+    appeals-cleanup-error: "Old appeals cleanup error: %error%"
+    report-create-error: "Report creation error: %error%"
+    report-get-error: "Report retrieval error: %error%"
+    reports-get-error: "Reports retrieval error: %error%"
+    status-reports-error: "Status reports retrieval error: %error%"
+    report-priority-updated: "Report #%report_id% priority updated to %priority%"
+    report-priority-error: "Report priority update error: %error%"
+    report-evidence-added: "Evidence added to report #%report_id%"
+    report-evidence-error: "Report evidence addition error: %error%"
+    report-count-error: "Report count retrieval error: %error%"
+    report-status-updated: "Report #%report_id% status updated to %status% by %reviewer%"
+    report-update-error: "Report update error: %error%"
+    old-reports-cleaned: "%count% old reports cleaned up"
+    reports-cleanup-error: "Old reports cleanup error: %error%"
+    
+  # Help command messages
+  help:
+    - "&6&l=== DiscordPunishBot Help ==="
+    - "&e/dpunish reload &7- Reload configuration"
+    - "&e/dpunish info &7- Show plugin information"
+    - "&e/dpunish test <type> &7- Test connections"
+    - "&e/dpunish stats &7- Show general statistics"
+    - "&e/ceza <player> &7- View player punishment history"
+    - "&8────────────────────────────────────────"
+    - "&7Use Discord slash commands in your Discord server"
+    - "&7to punish players: &e/mute, /ban, /kick, /tempban, /jail, /warn, /ceza"
+    
+  # Info command messages
+  info:
+    header: "&6&l=== DiscordPunishBot Information ==="
+    version: "&7Version: &e%version%"
+    author: "&7Author: &e%author%"
+    java-version: "&7Java Version: &e%java_version%"
+    server-version: "&7Server Version: &e%server_version%"
+    database: "&7Database: &e%db_type%"
+    discord-status:
+      online: "&7Discord Bot: &aOnline"
+      offline: "&7Discord Bot: &cOffline"
+    divider: "&8──────────────────────────────"
+    punishment-types: "&7Configured Punishment Types:"
+    mute-count: "&7• Mute: &e%count% reasons"
+    ban-count: "&7• Ban: &e%count% reasons"
+    kick-count: "&7• Kick: &e%count% reasons"
+    tempban-count: "&7• TempBan: &e%count% reasons"
+    jail-count: "&7• Jail: &e%count% reasons"
+    warn-count: "&7• Warn: &e%count% reasons"
+    other-count: "&7• Other: &e%count% reasons"
+    
+  # Test command messages
+  test:
+    database:
+      start: "&7Testing database connection..."
+      success: "&a✓ Database connection successful!"
+      failure: "&c✗ Database connection failed!"
+      error: "&c✗ Database error: %error%"
+    discord:
+      start: "&7Testing Discord bot connection..."
+      success: "&a✓ Discord bot connection active!"
+      failure: "&c✗ Discord bot connection failed!"
+      check-token: "&7Check token and restart the bot."
+      guild-configured: "&a✓ Guild ID configured: %guild_id%"
+      guild-not-configured: "&c⚠ Guild ID not configured!"
+      roles:
+        header: "&7Roles:"
+        mute: "  &7• Mute: %status%"
+        ban: "  &7• Ban: %status%"
+        kick: "  &7• Kick: %status%"
+        tempban: "  &7• TempBan: %status%"
+        jail: "  &7• Jail: %status%"
+        warn: "  &7• Warn: %status%"
+        other: "  &7• Other: %status%"
+      log-channel-configured: "&a✓ Log channel ID configured: %channel_id%"
+      log-channel-not-configured: "&c⚠ Log channel ID not configured!"
+      log-channel-accessible: "&a✓ Log channel is accessible"
+      log-channel-access-failure: "&c⚠ Log channel access test failed"
+      error: "&c✗ Discord test error: %error%"
+    invalid-type: "&cValid test types: database, discord"
+    
+  # Stats command messages
+  stats:
+    start: "&7Calculating statistics..."
+    header: "&6&l=== Server Punishment Statistics ==="
+    total: "&7Total Punishments: &e%count%"
+    today: "&7Today's Punishments: &e%count%"
+    unique-players: "&7Punished Players: &e%count%"
+    divider: "&8──────────────────────────────"
+    types:
+      type-header: "&7Punishment Types:"
+      mute: "&7• Mute: &e%count% &8(%percentage%%)"
+      ban: "&7• Ban: &c%count% &8(%percentage%%)"
+      kick: "&7• Kick: &6%count% &8(%percentage%%)"
+      tempban: "&7• TempBan: &5%count% &8(%percentage%%)"
+      jail: "&7• Jail: &b%count% &8(%percentage%%)"
+      warn: "&7• Warn: &a%count% &8(%percentage%%)"
+      other: "&7• Other: &b%count% &8(%percentage%%)"
+    error: "&cStatistics error: %error%"
+    
+  # Ceza command stats
+  ceza-stats:
+    header: "&6Statistics:"
+    types: "&7Mute: &e%mute_count% &8| &7Ban: &c%ban_count% &8| &7Kick: &6%kick_count% &8| &7TempBan: &5%tempban_count% &8| &7Jail: &b%jail_count% &8| &7Warn: &a%warn_count%"
+    active: "&7Active Punishments: &%color%%count%"
+    latest: "&7Latest Punishment: &f%date% &8(&e%reason%&8)"
+    
+  # Discord messages
+  discord:
+    no-permission: "❌ You don't have permission to use this command!"
+    invalid-reason: "❌ Invalid reason! Please select from the menu below:"
+    reason-menu-placeholder: "Select punishment reason..."
+    reason-menu: "Select %type% reason for **%player%**:"
+    reason-menu-option: "Reason: %display%"
+    punishment-executing: "⏳ Applying punishment..."
+    punishment-success: "✅ **%reason%** punishment successfully applied to **%player%**!"
+    ceza-embed-title: "📋 %player% - Punishment History"
+    ceza-embed-footer: "Total %total% punishments"
+    ceza-no-punishments: "This player has no punishment history."
+    ceza-entry: "**%index%.** %date% - **%type%** - %reason%\n*By %admin% - %status%*\n\n"
+    status:
+      active: "Active"
+      inactive: "Inactive"
+    embed-field-player: "👤 Player"
+    embed-field-type: "⚖️ Punishment Type"
+    embed-field-reason: "📝 Reason"
+    embed-field-admin: "👮 Admin"
+    embed-field-date: "🕐 Date"
+    embed-field-duration: "⏰ Duration"
+    embed-field-id: "📊 ID"
+    duration-permanent: "Permanent"
+    duration-unit-seconds: " seconds"
+    duration-unit-minutes: " minutes"
+    duration-unit-hours: " hours"
+    duration-unit-days: " days"
+    duration-unit-weeks: " weeks"
+    type-display:
+      mute: "mute"
+      ban: "ban"
+      kick: "kick"
+      tempban: "temporary ban"
+      jail: "jail"
+      warn: "warning"
+      other: "other punishment"
+    commands:
+      mute:
+        description: "Mute a player"
+        option-player: "Player to mute"
+        option-reason: "Mute reason"
+      ban:
+        description: "Ban a player"
+        option-player: "Player to ban"
+        option-reason: "Ban reason"
+      kick:
+        description: "Kick a player"
+        option-player: "Player to kick"
+        option-reason: "Kick reason"
+      tempban:
+        description: "Temporarily ban a player"
+        option-player: "Player to temporarily ban"
+        option-reason: "Temporary ban reason"
+      jail:
+        description: "Jail a player"
+        option-player: "Player to jail"
+        option-reason: "Jail reason"
+      warn:
+        description: "Warn a player"
+        option-player: "Player to warn"
+        option-reason: "Warning reason"
+      other:
+        description: "Other punishment types"
+        option-player: "Player to punish"
+        option-reason: "Punishment reason"
+      ceza:
+        description: "View player's punishment history"
+        option-player: "Player to query"
+        
+  # Punishment type display names
+  punishment-types:
+    mute: "Mute"
+    ban: "Ban"
+    kick: "Kick"
+    tempban: "TempBan"
+    jail: "Jail"
+    warn: "Warning"
+    default: "%type%"
+    
+  # Format for Punishment.toString()
+  punishment-to-string: "Punishment{id=%id%, player='%player%', type='%type%', reason='%reason%', admin='%admin%', date='%date%'}"
+
+# Appeal System Messages
+appeal:
+  no-punishments: "&c&l[!] &cYou have no active punishments."
+  available-punishments: "&e&l[APPEAL] &7Punishments you can appeal:"
+  punishment-entry: "&7%id%. &f%type% &7- &e%reason% &7(%date%) &8- &7Admin: &f%admin%"
+  usage-help: "&a/appeal <punishment_id> <appeal_reason> &7- Create appeal"
+  usage-create: "&cUsage: &f/appeal <punishment_id> <appeal_reason>"
+  usage-status: "&cUsage: &f/appeal status <appeal_id>"
+  no-appeals: "&c&l[!] &cYou have no appeals."
+  appeals-header: "&e&l[APPEAL] &7%player%'s appeals:"
+  appeal-entry: "&7%id%. &fPunishment ID: &e%punishment_id% &7- &f%status% &7(%date%)"
+  admin-response: "&a&l[ADMIN] &7%admin%: &f%response% &7(%date%)"
+  not-found: "&c&l[!] &cNo appeal found with this ID."
+  not-yours: "&c&l[!] &cThis appeal doesn't belong to you."
+  status-header: "&e&l[APPEAL #%id%] &7Status Information:"
+  status-punishment: "&7Punishment ID: &f%punishment_id%"
+  status-reason: "&7Appeal Reason: &f%reason%"
+  status-status: "&7Status: &f%status%"
+  status-date: "&7Date: &f%date%"
+  status-reviewer: "&7Reviewer: &f%reviewer% &7(%date%)"
+  status-response: "&7Admin Response: &f%response%"
+  reason-too-short: "&c&l[!] &cAppeal reason must be at least 10 characters."
+  reason-too-long: "&c&l[!] &cAppeal reason can be maximum 500 characters."
+  cooldown: "&c&l[!] &cYou must wait &e%hours% hours &cbefore creating another appeal."
+  already-exists: "&c&l[!] &cYou already have an active appeal for this punishment."
+  created: "&a&l[✓] &aYour appeal has been created! ID: &e#%id% &a(Punishment ID: %punishment_id%)"
+  creation-failed: "&c&l[!] &cFailed to create appeal."
+  invalid-punishment-id: "&c&l[!] &cInvalid punishment ID number."
+  invalid-id: "&c&l[!] &cInvalid appeal ID number."
+  help-header: "&e&l[APPEAL] &7Help Menu:"
+  help-list: "&f/appeal &7- List punishments you can appeal"
+  help-create: "&f/appeal <punishment_id> <reason> &7- Create new appeal"
+  help-status: "&f/appeal status <appeal_id> &7- Check appeal status"
+  help-list-cmd: "&f/appeal list &7- List all your appeals"
+  approved: "&a&l[✓] &aYour appeal has been approved! ID: &e#%appeal_id% &7Response: &f%response%"
+  rejected: "&c&l[!] &cYour appeal has been rejected! ID: &e#%appeal_id% &7Response: &f%response%"
+
+# Report System Messages
+report:
+  usage-header: "&e&l[REPORT] &7Usage Information:"
+  usage: "&f/report <player> <reason> [description] &7- Create report"
+  usage-anonymous: "&f/report anonymous <player> <reason> [description] &7- Anonymous report"
+  usage-list: "&f/report list &7- List your reports"
+  usage-status: "&f/report status <report_id> &7- Report status"
+  usage-help: "&f/report help &7- Help menu"
+  no-reports: "&c&l[!] &cYou have no reports."
+  reports-header: "&e&l[REPORT] &7%player%'s reports:"
+  report-entry: "&7%id%. &f%reported% &7- &e%reason% &7[&f%status%&7] &8Priority: %priority% &7(%date%)"
+  not-found: "&c&l[!] &cNo report found with this ID."
+  not-yours: "&c&l[!] &cThis report doesn't belong to you."
+  status-header: "&e&l[REPORT #%id%] &7Status Information:"
+  status-reporter: "&7Reporter: &f%reporter%"
+  status-reported: "&7Reported: &f%reported%"
+  status-reason: "&7Reason: &f%reason%"
+  status-description: "&7Description: &f%description%"
+  status-status: "&7Status: &f%status%"
+  status-priority: "&7Priority: &f%priority%"
+  status-date: "&7Date: &f%date%"
+  status-reviewer: "&7Reviewer: &f%reviewer% &7(%date%)"
+  status-response: "&7Admin Response: &f%response%"
+  status-evidence: "&7Evidence: &f%evidence%"
+  reason-too-short: "&c&l[!] &cReport reason must be at least 3 characters."
+  description-too-long: "&c&l[!] &cDescription can be maximum 500 characters."
+  cooldown: "&c&l[!] &cYou must wait &e%minutes% minutes &cbefore creating another report."
+  player-not-found: "&c&l[!] &cPlayer %player% not found."
+  cannot-report-self: "&c&l[!] &cYou cannot report yourself."
+  too-many-recent-reports: "&c&l[!] &cThis player has received too many reports recently. Please try again later."
+  created: "&a&l[✓] &aYour report has been created! ID: &e#%id% &a(Player: %reported%, Anonymous: %anonymous%)"
+  creation-failed: "&c&l[!] &cFailed to create report."
+  invalid-id: "&c&l[!] &cInvalid report ID number."
+  moderator-notification: "&c&l[REPORT] &7%reporter% reported %reported% &f(%reason%) &7ID: #%report_id%"
+  anonymous-yes: "Yes"
+  anonymous-no: "No"
+  help-header: "&e&l[REPORT] &7Help Menu:"
+  help-create: "&f/report <player> <reason> [description] &7- Create report"
+  help-anonymous: "&f/report anonymous <player> <reason> [description] &7- Anonymous report"
+  help-list: "&f/report list &7- List your reports"
+  help-status: "&f/report status <id> &7- Check report status"
+  help-reasons: "&7Common reasons:"
+  available-reasons: "&7%reasons%"
+  status-update:
+    pending: "&e&l[REPORT] &7Your report (#%report_id%) is pending: &f%reported%"
+    under_review: "&b&l[REPORT] &7Your report (#%report_id%) is under review: &f%reported%"
+    resolved: "&a&l[REPORT] &7Your report (#%report_id%) has been resolved: &f%reported% &7Response: %response%"
+    dismissed: "&c&l[REPORT] &7Your report (#%report_id%) has been dismissed: &f%reported% &7Response: %response%"
+    duplicate: "&e&l[REPORT] &7Your report (#%report_id%) is duplicate: &f%reported% &7Response: %response%"
+
+# Status Messages
+status:
+  pending: "Pending"
+  approved: "Approved"
+  rejected: "Rejected"
+  under_review: "Under Review"
+  resolved: "Resolved"
+  dismissed: "Dismissed"
+  duplicate: "Duplicate"
+  active: "Active"
+  inactive: "Inactive"
+
+# Priority Messages
+priority:
+  low: "Low"
+  medium: "Medium"
+  high: "High"
+  urgent: "Urgent"
+
+# Discord Messages
+discord:
+  appeal:
+    new-title: "New Appeal"
+    approved-title: "Appeal Approved"
+    rejected-title: "Appeal Rejected"
+    field-id: "Appeal ID"
+    field-punishment: "Punishment ID"
+    field-player: "Player"
+    field-reason: "Appeal Reason"
+    field-date: "Date"
+    field-status: "Status"
+    field-reviewer: "Reviewer"
+    field-reviewed-date: "Review Date"
+    field-response: "Admin Response"
+    footer: "Automated Appeal System"
+  report:
+    new-title: "New Report"
+    updated-title: "Report Updated"
+    field-id: "Report ID"
+    field-reported: "Reported Player"
+    field-reporter: "Reporter"
+    field-reason: "Reason"
+    field-description: "Description"
+    field-priority: "Priority"
+    field-status: "Status"
+    field-date: "Date"
+    field-reviewer: "Reviewer"
+    field-response: "Admin Response"
+    field-evidence: "Evidence"
+    footer: "Automated Report System"
