@@ -4,6 +4,9 @@
 
 ---
 
+![bStats Servers](https://bstats.org/signatures/bukkit/Punish%20System.svg)
+
+
 ## 🇺🇸 English README
 
 **A professional punishment, appeal, and report management system plugin for Minecraft servers with advanced Discord integration.**
